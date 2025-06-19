@@ -1,19 +1,22 @@
-"use client"
+"use client";
 
-import { Inbox, Send, File, Trash } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Inbox, Send, File, Trash, MailQuestion } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const folders = [
-  { name: 'Inbox', icon: Inbox },
-  { name: 'Sent', icon: Send },
-  { name: 'Drafts', icon: File },
-  { name: 'Trash', icon: Trash },
-]
+  { name: "Inbox", icon: Inbox },
+  { name: "Sent", icon: Send },
+  { name: "Drafts", icon: File },
+  { name: "Junk", icon: MailQuestion },
+  { name: "Trash", icon: Trash },
+];
 
 export function Sidebar({ currentFolder, onFolderChange, onCompose }) {
   return (
     <div className="w-64 bg-secondary p-4 flex flex-col h-full">
-      <Button className="mb-4 w-full" variant="default" onClick={onCompose}>Compose</Button>
+      <Button className="mb-4 w-full" variant="default" onClick={onCompose}>
+        Compose
+      </Button>
       <nav>
         {folders.map((folder) => (
           <Button
@@ -28,5 +31,5 @@ export function Sidebar({ currentFolder, onFolderChange, onCompose }) {
         ))}
       </nav>
     </div>
-  )
+  );
 }
